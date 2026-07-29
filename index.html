@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Digital Marketing Showcase — Tri-Comp Solutions Pte Ltd | TechNext</title>
+<meta name="description" content="A visual digital marketing showcase by TechNext for Tri-Comp Solutions — social media, website and AI-generated content."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E3D','mid':'#122B52'},cyan:{'DEFAULT':'#1BB0CE','light':'#5DD1E8','pale':'#E3F9FC'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Open Sans','system-ui','sans-serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
+</script>
+<link rel="stylesheet" href="styles.css?v=1"/>
+<style>
+/* ===== Focus sections, galleries & rich interaction ===== */
+.focus-sec{padding:110px 24px;position:relative;overflow:hidden}
+.focus-eyebrow{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700}
+.focus-h{font-family:'Open Sans',sans-serif;font-weight:800;font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.08;letter-spacing:-.015em}
+
+/* Text effects: moving color (no glow) */
+@keyframes flowMove{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.flow{background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:flowMove 6s linear infinite;padding-bottom:.04em}
+.flow-d{background-image:linear-gradient(90deg,#5DD1E8,#B8F0F9,#F0FDFF,#5DD1E8,#1BB0CE,#5DD1E8)}
+.flow-l{background-image:linear-gradient(90deg,#003777,#0E7EA0,#1BB0CE,#0E7EA0,#003777)}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+
+/* Benefit chips */
+.chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.bchip{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:99px;border:1px solid rgba(27,176,206,.28);background:rgba(27,176,206,.06);transition:transform .35s cubic-bezier(.34,1.6,.64,1),background .35s ease,border-color .35s ease}
+.bchip:hover{transform:translateY(-3px);background:rgba(27,176,206,.14);border-color:rgba(27,176,206,.5)}
+.bchip .dot{width:6px;height:6px;border-radius:50%;background:#1BB0CE}
+
+/* Overview cards */
+.ov-card{position:relative;border-radius:18px;padding:34px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(27,176,206,.16);overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.4,.64,1),box-shadow .5s ease,border-color .4s ease,background .4s ease}
+.ov-card:hover{background:rgba(27,176,206,.06);border-color:rgba(27,176,206,.45);box-shadow:0 28px 64px rgba(0,0,0,.4)}
+.ov-ic{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(27,176,206,.16),rgba(27,176,206,.04));border:1px solid rgba(27,176,206,.3);margin-bottom:20px;transition:transform .5s cubic-bezier(.34,1.6,.64,1)}
+.ov-card:hover .ov-ic{transform:translateY(-4px) scale(1.08) rotate(-4deg)}
+.ov-num{position:absolute;top:18px;right:22px;font-family:'Bebas Neue',cursive;font-size:2.4rem;color:rgba(27,176,206,.18);transition:color .4s ease}
+.ov-card:hover .ov-num{color:rgba(27,176,206,.4)}
+
+/* Tags & captions */
+.ph-tag{position:absolute;top:11px;right:13px;z-index:5;font-size:8.5px;letter-spacing:.16em;color:rgba(93,209,232,.9);background:rgba(5,13,28,.7);border:1px solid rgba(27,176,206,.32);padding:3px 9px;border-radius:5px;font-weight:700}
+.ph-cap{text-align:center;font-size:.88rem;margin-top:22px;color:#9A9AB0;letter-spacing:.03em}
+
+/* ── Social post cards ── */
+.post-card{position:relative;background:#0E1E3D;border:1px solid rgba(27,176,206,.16);border-radius:16px;overflow:hidden;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.post-card:hover{border-color:rgba(27,176,206,.5);box-shadow:0 26px 58px rgba(0,0,0,.5)}
+.post-head{display:flex;align-items:center;gap:10px;padding:13px 15px}
+.post-ava{width:38px;height:38px;border-radius:50%;flex-shrink:0;overflow:hidden;border:1px solid rgba(27,176,206,.25);background:#fff;display:flex;align-items:center;justify-content:center}
+.post-ava img{width:78%;height:78%;object-fit:contain;display:block}
+.post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#5DD1E8;border:1px solid rgba(27,176,206,.3);border-radius:5px;padding:3px 8px}
+.pname{font-size:12px;font-weight:700;color:#fff;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phandle{font-size:10px;color:rgba(255,255,255,.42);line-height:1.2}
+.post-foot{display:flex;gap:20px;padding:11px 16px 13px;color:rgba(93,209,232,.55);border-top:1px solid rgba(27,176,206,.08)}
+.post-foot svg{transition:transform .3s ease}
+.post-card:hover .post-foot svg:hover{transform:scale(1.25)}
+
+/* Placeholder media tile — concept art standing in for real photography */
+.ph-media{position:relative;aspect-ratio:4/5;overflow:hidden;display:flex;align-items:center;justify-content:center;border-block:1px solid rgba(27,176,206,.1)}
+.ph-media .ic-wrap{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
+.post-card:hover .ph-media .ic-wrap{transform:scale(1.1) translateY(-3px)}
+.ph-media .ic-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 12px;background:linear-gradient(to top,rgba(3,7,16,.85),transparent);color:#fff;font-size:.72rem;letter-spacing:.02em;text-align:center;font-weight:600}
+.ph-g1{background:linear-gradient(135deg,#0A5F78,#1BB0CE)}
+.ph-g2{background:linear-gradient(135deg,#003777,#0E7EA0)}
+.ph-g3{background:linear-gradient(135deg,#B81419,#E51B20)}
+
+/* ── Browser mockup ── */
+.browser{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(27,176,206,.22);background:#0A1730;box-shadow:0 34px 90px rgba(0,0,0,.6);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.browser:hover{border-color:rgba(27,176,206,.5);box-shadow:0 50px 120px rgba(0,0,0,.7)}
+.browser-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0E1E3D;border-bottom:1px solid rgba(27,176,206,.14)}
+.bdot{width:11px;height:11px;border-radius:50%}
+.browser-url{flex:1;margin-left:10px;height:28px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(27,176,206,.14);display:flex;align-items:center;padding:0 13px;font-size:11px;color:rgba(255,255,255,.5)}
+.site-frame{position:relative;height:620px;background:#fff;overflow:hidden}
+.site-frame iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:640px){.site-frame{height:440px}}
+
+/* ── AI video-concept placeholders ── */
+.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(27,176,206,.2);display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
+.video-ph:hover{box-shadow:0 36px 80px rgba(0,0,0,.6)}
+.play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;transition:transform .4s ease,background .4s ease;animation:pulse-ring 2.6s ease-out infinite;position:relative;z-index:2}
+.video-ph:hover .play-btn{transform:scale(1.16);background:rgba(255,255,255,.3)}
+.play-btn::before{content:'';border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;margin-left:5px}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}70%{box-shadow:0 0 0 26px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.ai-badge{position:absolute;top:11px;left:11px;z-index:4;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:linear-gradient(135deg,#0E7EA0,#1BB0CE);padding:3px 8px;border-radius:5px}
+.video-ph .gal-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:30px 14px 12px;background:linear-gradient(to top,rgba(3,7,16,.88),transparent);color:#fff;font-size:.8rem;letter-spacing:.02em;font-weight:600;text-align:left}
+.video-ph .gal-cap small{display:block;font-weight:400;opacity:.65;font-size:.68rem;margin-top:2px}
+
+/* Continuous float + shine sweep */
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float{animation:floaty 6s ease-in-out infinite}
+.shine{position:relative;overflow:hidden}
+.shine::before{content:'';position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.16) 50%,transparent 80%);transform:skewX(-18deg);transition:left .8s ease;pointer-events:none;z-index:6}
+.shine:hover::before{left:170%}
+@media(prefers-reduced-motion:reduce){.float,.play-btn{animation:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="cursor-glow"></div>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(5,13,28,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(27,176,206,.18)">
+  <div class="max-w-6xl mx-auto flex items-center justify-between relative">
+    <a href="https://www.tri-comp.com/" target="_blank" rel="noopener" class="logo-chip">
+      <img src="img/logo.png" alt="Tri-Comp Solutions Pte Ltd">
+    </a>
+    <div id="navLinks" class="flex items-center gap-4 md:gap-8">
+      <a href="#overview" class="nav-page">Overview</a>
+      <a href="#social" class="nav-page">Social</a>
+      <a href="#website" class="nav-page">Website</a>
+      <a href="#ai" class="nav-page">AI Content</a>
+    </div>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg relative min-h-screen flex items-center justify-center">
+  <div class="hero-overlay"></div>
+  <div class="grid-field"></div>
+  <div id="hero-inner" class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 pb-20">
+    <div class="hero-badge-pill reveal">
+      <span class="badge-dot"></span>
+      Digital Marketing Showcase · 2026
+    </div>
+    <p class="text-white/55 text-[11px] tracking-[.3em] uppercase mb-5">A Showcase for</p>
+    <h1 class="font-extrabold leading-[1.06] mb-7" style="font-family:'Open Sans',sans-serif;letter-spacing:-.02em">
+      <span class="flow flow-d">Tri-Comp Solutions</span><br>
+      <em class="font-normal orange-anim not-italic">Pte Ltd</em>
+    </h1>
+    <p class="text-white/75 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7">
+      Three ways we'll grow the brand online — <strong style="color:#5DD1E8;font-weight:600">social media</strong>, a <strong style="color:#5DD1E8;font-weight:600">website</strong>, and <strong style="color:#5DD1E8;font-weight:600">AI-generated content</strong>.
+    </p>
+    <p class="text-white/55 text-[11px] tracking-[.22em] uppercase mb-11">
+      Digital Marketing Showcase &nbsp;·&nbsp; Curated by TechNext
+    </p>
+    <div class="flex flex-row flex-wrap gap-4 justify-center">
+      <a href="#overview" class="btn btn-primary text-xs tracking-[.15em] uppercase px-9 py-4 font-semibold">
+        See What We'll Build
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="https://www.tri-comp.com/" target="_blank" rel="noopener" class="btn btn-ow text-xs tracking-[.15em] uppercase px-9 py-4">Visit tri-comp.com</a>
+    </div>
+    <!-- Hero stats bar -->
+    <div class="hero-stats-bar">
+      <div class="hero-stat-item">
+        <span class="hero-stat-n" data-count="24">24</span>
+        <span class="hero-stat-l">Years in Business · Est. 2002</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-n" data-count="4">4</span>
+        <span class="hero-stat-l">Certified Engineers, 24/7</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-n" data-count="7">7</span>
+        <span class="hero-stat-l">Industry Certifications</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-n" data-count="6">6</span>
+        <span class="hero-stat-l">Core IT Service Lines</span>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">
+    <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- KEYWORD MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mq">
+    <span>IT Maintenance &amp; Support</span><span>Cybersecurity &amp; Access Control</span><span>VOIP &amp; Unified Comms</span><span>Cloud Computing</span><span>IT Outsourcing</span><span>24/7 Helpdesk</span><span>Network Management</span><span>Web &amp; App Development</span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview" class="py-24 px-6" style="background:#071226">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#5DD1E8">What We'll Focus On</p>
+      <h2 class="focus-h flow flow-d mb-5">Three Ways to Grow Tri-Comp Online</h2>
+      <div class="orange-bar mx-auto mb-6"></div>
+      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around three high-impact pillars — turning 24 years of engineering trust into online visibility and leads.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <a href="#social" class="ov-card reveal-s d1 block" style="text-decoration:none">
+        <span class="ov-num">01</span>
+        <div class="ov-ic">
+          <svg width="30" height="30" fill="none" stroke="#1BB0CE" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#5DD1E8"/></svg>
+        </div>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">Social Media Posting</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional posts that keep Tri-Comp visible and build trust with IT managers and business owners.</p>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#5DD1E8">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+      <a href="#website" class="ov-card reveal-s d2 block" style="text-decoration:none">
+        <span class="ov-num">02</span>
+        <div class="ov-ic">
+          <svg width="30" height="30" fill="none" stroke="#1BB0CE" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r=".6" fill="#5DD1E8"/><circle cx="7.8" cy="6.5" r=".6" fill="#5DD1E8"/></svg>
+        </div>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">Website</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">A professional digital storefront that wins credibility and converts searchers into quote requests.</p>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#5DD1E8">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+      <a href="#ai" class="ov-card reveal-s d3 block" style="text-decoration:none">
+        <span class="ov-num">03</span>
+        <div class="ov-ic">
+          <svg width="30" height="30" fill="none" stroke="#1BB0CE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#5DD1E8"/><circle cx="5.5" cy="18" r=".9" fill="#5DD1E8"/></svg>
+        </div>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">AI Video &amp; Image Generation</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional service visuals and explainer videos — created fast and affordably with AI.</p>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#5DD1E8">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 01 SOCIAL MEDIA POSTING -->
+<section id="social" class="focus-sec" style="background:#F8F9FC">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-4 reveal">
+      <p class="focus-eyebrow" style="color:#0A6B85">01 · Social Media Posting</p>
+      <h2 class="focus-h flow flow-l mt-3 mb-4">Show Up Where IT Managers Are Looking</h2>
+      <div class="orange-bar mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">A steady stream of professional, on-brand posts keeps Tri-Comp top-of-mind with the facilities managers, IT leads and business owners who decide who gets the next support contract.</p>
+      <div class="chip-row mb-2">
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Trust &amp; Certifications</span>
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Real Engineers, Real Work</span>
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Always-On Presence</span>
+      </div>
+    </div>
+
+    <!-- 8 concept posts · 4-column grid -->
+    <div class="relative reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-4">
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="ph-media ph-g1"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg></div><p class="ic-cap">IT Maintenance &amp; Helpdesk</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">2h · Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="ph-media ph-g2"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><p class="ic-cap">Security &amp; Access Control</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="ph-media ph-g1"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0116 0v1"/><path d="M4 13a2 2 0 012-2h1v5H6a2 2 0 01-2-2v-1z"/><path d="M20 13a2 2 0 00-2-2h-1v5h1a2 2 0 002-2v-1z"/><path d="M17 18a2 2 0 01-2 2h-2"/></svg></div><p class="ic-cap">VOIP &amp; Unified Comms</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">1d · Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="ph-media ph-g2"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M7 18a4 4 0 01-.5-7.97A5 5 0 0116.9 8.05 4.5 4.5 0 0117.5 18H7z"/></svg></div><p class="ic-cap">Cloud Computing</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="ph-media ph-g1"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2"/><circle cx="16" cy="10" r="2.6"/><path d="M3.5 19c.6-2.8 2.7-4.6 5.5-4.6s4.6 1.5 5.3 3.6"/><path d="M13.5 19c.4-1.8 1.7-3 3.5-3 1.6 0 3 1 3.5 2.6"/></svg></div><p class="ic-cap">IT Outsourcing</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">3h · Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="ph-media ph-g2"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6"/><path d="M15 6l5 6-5 6"/></svg></div><p class="ic-cap">Web &amp; App Development</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="ph-media ph-g3"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.2 12.6L7 21l5-2.3L17 21l-1.2-8.4"/></svg></div><p class="ic-cap">CISSP · CCNP · CCNA +4</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"><img src="img/logo.png" alt="Tri-Comp Solutions"></div><div class="flex-1 min-w-0"><p class="pname">Tri-Comp Solutions</p><p class="phandle">5h · Sponsored</p></div><span class="post-plat">Facebook</span></div>
+          <div class="ph-media ph-g3"><div class="ic-wrap"><svg width="26" height="26" fill="none" stroke="#fff" stroke-width="1.6" viewBox="0 0 24 24"><path d="M7 8c-2.2 0-4 1.8-4 4 0 2 1.3 3.6 3.2 3.9-.2 1.4-1 2.4-2.2 2.9v1.7c2.6-.4 4.6-2.5 5-5.2.2-1.1.2-2.1 0-3.1C8.7 9.7 8 8 7 8z"/><path d="M17 8c-2.2 0-4 1.8-4 4 0 2 1.3 3.6 3.2 3.9-.2 1.4-1 2.4-2.2 2.9v1.7c2.6-.4 4.6-2.5 5-5.2.2-1.1.2-2.1 0-3.1C18.7 9.7 18 8 17 8z"/></svg></div><p class="ic-cap">Client Testimonial</p></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+
+      </div>
+      <p class="ph-cap">Concept mockups built around Tri-Comp's real service lines, certifications and client feedback — final posts will feature Tri-Comp's own engineers and job sites</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WEBSITE -->
+<section id="website" class="focus-sec" style="background:#071226">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-4 reveal">
+      <p class="focus-eyebrow" style="color:#5DD1E8">02 · Website</p>
+      <h2 class="focus-h flow flow-d mt-3 mb-4">A Digital Storefront That Sells</h2>
+      <div class="orange-bar mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto mb-7 text-white/70" style="font-size:1.2rem;line-height:1.8">A modern, professional website is Tri-Comp's best salesperson — working 24/7 to win credibility with IT managers and turn online searchers into quote requests.</p>
+      <div class="chip-row mb-2">
+        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>Instant Credibility</span>
+        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>Converts to Leads</span>
+        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>One Home for Everything</span>
+      </div>
+    </div>
+
+    <!-- Live Tri-Comp website embed -->
+    <div class="relative reveal mt-6">
+      <span class="ph-tag">LIVE PREVIEW</span>
+      <div class="browser shine">
+        <div class="browser-bar">
+          <span class="bdot" style="background:#ff5f57"></span>
+          <span class="bdot" style="background:#febc2e"></span>
+          <span class="bdot" style="background:#28c840"></span>
+          <span class="browser-url">tri-comp.com</span>
+        </div>
+        <div class="site-frame">
+          <iframe src="https://www.tri-comp.com/" title="Tri-Comp Solutions website" loading="lazy"></iframe>
+        </div>
+      </div>
+      <p class="ph-cap">Live preview of the Tri-Comp Solutions website — <a href="https://www.tri-comp.com/" target="_blank" rel="noopener" style="color:#5DD1E8;text-decoration:underline;text-underline-offset:2px">open in a new tab</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 AI VIDEO & IMAGE GENERATION -->
+<section id="ai" class="focus-sec" style="background:#F8F9FC">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-4 reveal">
+      <p class="focus-eyebrow" style="color:#0A6B85">03 · AI Video &amp; Image Generation</p>
+      <h2 class="focus-h flow flow-l mt-3 mb-4">Studio-Quality Content, Without the Studio</h2>
+      <div class="orange-bar mx-auto mb-6"></div>
+      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">AI produces professional explainer videos and service visuals at a fraction of the usual cost and time — bringing servers, security and the cloud to life without an expensive shoot.</p>
+      <div class="chip-row mb-2">
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Fast Turnaround</span>
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Affordable</span>
+        <span class="bchip" style="color:#0A6B85"><span class="dot"></span>Content at Scale</span>
+      </div>
+    </div>
+
+    <!-- AI-generated video concepts · 2-column grid -->
+    <div class="relative reveal mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="video-ph tilt shine ph-g2"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">Server Room Walkthrough<small>A cinematic pass through a modern, secure data hall</small></div>
+        </div>
+
+        <div class="video-ph tilt shine ph-g3"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">Cybersecurity, Visualised<small>How Tri-Comp stops a breach before it starts</small></div>
+        </div>
+
+        <div class="video-ph tilt shine ph-g1"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">Cloud Migration, Explained<small>From on-premise to cloud in 30 seconds</small></div>
+        </div>
+
+        <div class="video-ph tilt shine ph-g2"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">Unified Comms in Action<small>One VOIP system, every device, every desk</small></div>
+        </div>
+
+        <div class="video-ph tilt shine ph-g1"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">Meet the Engineers<small>The certified team behind every ticket</small></div>
+        </div>
+
+        <div class="video-ph tilt shine ph-g3"><span class="ai-badge">AI Video</span>
+          <div class="play-btn"></div>
+          <div class="gal-cap">24/7 Helpdesk, In Action<small>Support that never clocks out</small></div>
+        </div>
+
+      </div>
+      <p class="ph-cap">Concept previews — final AI videos will be generated from Tri-Comp's real branding and service footage</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="py-24 px-6 relative" style="background:linear-gradient(160deg,#0E1E3D,#071226)">
+  <div class="absolute inset-0 dot-bg opacity-30"></div>
+  <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
+    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#5DD1E8">The Vision</p>
+    <h2 class="focus-h flow flow-d mb-6">Social. Website. AI Content. One Brand, Everywhere.</h2>
+    <p class="text-white/70 max-w-2xl mx-auto mb-10" style="font-size:1.25rem;line-height:1.8">
+      Together, these three pillars put 24 years of Tri-Comp's engineering trust in front of the right buyers — consistently, professionally, and at scale.
+    </p>
+    <a href="mailto:hello@technext.asia?subject=Let%27s%20talk%20about%20Tri-Comp%27s%20digital%20marketing" class="btn btn-primary text-xs tracking-[.15em] uppercase px-9 py-4 font-semibold">
+      Let's Build It — Talk to TechNext
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+<script src="app.js?v=1" defer></script>
+</body>
+</html>
