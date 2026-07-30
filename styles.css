@@ -54,11 +54,11 @@ p,li,td,th{line-height:1.85}
 @keyframes metalFlow{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 .orange-anim{background:linear-gradient(90deg,#E51B20,#FF5A55,#FFAFA9,#FF5A55,#E51B20);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:metalFlow 6s linear infinite}
 
-.ov-card,.tilt,.post-card,.browser{transform-style:preserve-3d;will-change:transform}
+.ov-card,.tilt,.post-card{transform-style:preserve-3d;will-change:transform}
 .spot{position:absolute;inset:0;z-index:0;border-radius:inherit;opacity:0;transition:opacity .35s ease;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(27,176,206,.18),transparent 62%);pointer-events:none}
 .ov-card:hover .spot{opacity:1}
 .ov-card>*:not(.spot){position:relative;z-index:1}
-.ov-card:hover,.post-card:hover,.browser:hover{box-shadow:0 26px 60px rgba(0,0,0,.40),0 0 0 1px rgba(27,176,206,.45)!important;border-color:rgba(27,176,206,.5)!important}
+.ov-card:hover,.post-card:hover{box-shadow:0 26px 60px rgba(0,0,0,.40),0 0 0 1px rgba(27,176,206,.45)!important;border-color:rgba(27,176,206,.5)!important}
 
 h2[style*="Open Sans"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:1.12}
 .hero-bg h1,header.hero-bg h1{font-size:clamp(2.6rem,7vw,5rem)!important;line-height:1.08}

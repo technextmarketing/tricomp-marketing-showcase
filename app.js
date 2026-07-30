@@ -62,12 +62,12 @@ if(fine && !reduce){
   (function loop(){cx+=(gx-cx)*.15;cy+=(gy-cy)*.15;glow.style.left=cx+'px';glow.style.top=cy+'px';requestAnimationFrame(loop);})();
 
   // ── Card 3D tilt + spotlight ──
-  document.querySelectorAll('.ov-card, .tilt, .browser').forEach(function(card){
+  document.querySelectorAll('.ov-card, .tilt').forEach(function(card){
     var spotOK=/(ov-card)/.test(card.className);
     var spot=null;
     if(spotOK){spot=document.createElement('div');spot.className='spot';card.insertBefore(spot,card.firstChild);}
-    var amt=card.classList.contains('browser')?7:card.classList.contains('post-card')||card.classList.contains('vcard')?9:8;
-    var lift=card.classList.contains('post-card')||card.classList.contains('vcard')?-4:-6;
+    var amt=card.classList.contains('post-card')||card.classList.contains('video-ph')?9:8;
+    var lift=card.classList.contains('post-card')||card.classList.contains('video-ph')?-4:-6;
     card.addEventListener('mousemove',function(e){
       var r=card.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
       card.style.transform='perspective(850px) rotateY('+((px-.5)*amt).toFixed(2)+'deg) rotateX('+((.5-py)*amt).toFixed(2)+'deg) translateY('+lift+'px)';

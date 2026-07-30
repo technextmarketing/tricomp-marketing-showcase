@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Digital Marketing Showcase — Tri-Comp Solutions Pte Ltd | TechNext</title>
-<meta name="description" content="A visual digital marketing showcase by TechNext for Tri-Comp Solutions — social media, website and AI-generated content."/>
+<meta name="description" content="A visual digital marketing showcase by TechNext for Tri-Comp Solutions — social media and AI-generated content."/>
 <meta name="robots" content="noindex, nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -42,7 +42,6 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
 .ov-card:hover .ov-num{color:rgba(27,176,206,.4)}
 
 /* Tags & captions */
-.ph-tag{position:absolute;top:11px;right:13px;z-index:5;font-size:8.5px;letter-spacing:.16em;color:rgba(93,209,232,.9);background:rgba(5,13,28,.7);border:1px solid rgba(27,176,206,.32);padding:3px 9px;border-radius:5px;font-weight:700}
 .ph-cap{text-align:center;font-size:.88rem;margin-top:22px;color:#9A9AB0;letter-spacing:.03em}
 
 /* ── Social post cards ── */
@@ -66,16 +65,6 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
 .ph-g1{background:linear-gradient(135deg,#0A5F78,#1BB0CE)}
 .ph-g2{background:linear-gradient(135deg,#003777,#0E7EA0)}
 .ph-g3{background:linear-gradient(135deg,#B81419,#E51B20)}
-
-/* ── Browser mockup ── */
-.browser{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(27,176,206,.22);background:#0A1730;box-shadow:0 34px 90px rgba(0,0,0,.6);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
-.browser:hover{border-color:rgba(27,176,206,.5);box-shadow:0 50px 120px rgba(0,0,0,.7)}
-.browser-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0E1E3D;border-bottom:1px solid rgba(27,176,206,.14)}
-.bdot{width:11px;height:11px;border-radius:50%}
-.browser-url{flex:1;margin-left:10px;height:28px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(27,176,206,.14);display:flex;align-items:center;padding:0 13px;font-size:11px;color:rgba(255,255,255,.5)}
-.site-frame{position:relative;height:620px;background:#fff;overflow:hidden}
-.site-frame iframe{width:100%;height:100%;border:0;display:block}
-@media(max-width:640px){.site-frame{height:440px}}
 
 /* ── AI video-concept placeholders ── */
 .video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(27,176,206,.2);display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
@@ -111,7 +100,6 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
     <div id="navLinks" class="flex items-center gap-4 md:gap-8">
       <a href="#overview" class="nav-page">Overview</a>
       <a href="#social" class="nav-page">Social</a>
-      <a href="#website" class="nav-page">Website</a>
       <a href="#ai" class="nav-page">AI Content</a>
     </div>
     <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -133,7 +121,7 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
       <em class="font-normal orange-anim not-italic">Pte Ltd</em>
     </h1>
     <p class="text-white/75 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7">
-      Three ways we'll grow the brand online — <strong style="color:#5DD1E8;font-weight:600">social media</strong>, a <strong style="color:#5DD1E8;font-weight:600">website</strong>, and <strong style="color:#5DD1E8;font-weight:600">AI-generated content</strong>.
+      Two ways we'll grow the brand online — <strong style="color:#5DD1E8;font-weight:600">social media</strong> and <strong style="color:#5DD1E8;font-weight:600">AI-generated content</strong>.
     </p>
     <p class="text-white/55 text-[11px] tracking-[.22em] uppercase mb-11">
       Digital Marketing Showcase &nbsp;·&nbsp; Curated by TechNext
@@ -182,11 +170,11 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
       <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#5DD1E8">What We'll Focus On</p>
-      <h2 class="focus-h flow flow-d mb-5">Three Ways to Grow Tri-Comp Online</h2>
+      <h2 class="focus-h flow flow-d mb-5">Two Ways to Grow Tri-Comp Online</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around three high-impact pillars — turning 24 years of engineering trust into online visibility and leads.</p>
+      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around two high-impact pillars — turning 24 years of engineering trust into online visibility and leads.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
       <a href="#social" class="ov-card reveal-s d1 block" style="text-decoration:none">
         <span class="ov-num">01</span>
@@ -198,18 +186,8 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
         <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#5DD1E8">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
-      <a href="#website" class="ov-card reveal-s d2 block" style="text-decoration:none">
+      <a href="#ai" class="ov-card reveal-s d2 block" style="text-decoration:none">
         <span class="ov-num">02</span>
-        <div class="ov-ic">
-          <svg width="30" height="30" fill="none" stroke="#1BB0CE" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r=".6" fill="#5DD1E8"/><circle cx="7.8" cy="6.5" r=".6" fill="#5DD1E8"/></svg>
-        </div>
-        <h3 class="text-2xl font-extrabold mb-2 text-white">Website</h3>
-        <p class="text-base" style="color:rgba(255,255,255,.6)">A professional digital storefront that wins credibility and converts searchers into quote requests.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#5DD1E8">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
-      </a>
-
-      <a href="#ai" class="ov-card reveal-s d3 block" style="text-decoration:none">
-        <span class="ov-num">03</span>
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#1BB0CE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#5DD1E8"/><circle cx="5.5" cy="18" r=".9" fill="#5DD1E8"/></svg>
         </div>
@@ -295,45 +273,11 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
   </div>
 </section>
 
-<!-- 02 WEBSITE -->
-<section id="website" class="focus-sec" style="background:#071226">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-4 reveal">
-      <p class="focus-eyebrow" style="color:#5DD1E8">02 · Website</p>
-      <h2 class="focus-h flow flow-d mt-3 mb-4">A Digital Storefront That Sells</h2>
-      <div class="orange-bar mx-auto mb-6"></div>
-      <p class="max-w-2xl mx-auto mb-7 text-white/70" style="font-size:1.2rem;line-height:1.8">A modern, professional website is Tri-Comp's best salesperson — working 24/7 to win credibility with IT managers and turn online searchers into quote requests.</p>
-      <div class="chip-row mb-2">
-        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>Instant Credibility</span>
-        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>Converts to Leads</span>
-        <span class="bchip" style="color:#5DD1E8"><span class="dot"></span>One Home for Everything</span>
-      </div>
-    </div>
-
-    <!-- Live Tri-Comp website embed -->
-    <div class="relative reveal mt-6">
-      <span class="ph-tag">LIVE PREVIEW</span>
-      <div class="browser shine">
-        <div class="browser-bar">
-          <span class="bdot" style="background:#ff5f57"></span>
-          <span class="bdot" style="background:#febc2e"></span>
-          <span class="bdot" style="background:#28c840"></span>
-          <span class="browser-url">tri-comp.com</span>
-        </div>
-        <div class="site-frame">
-          <iframe src="https://www.tri-comp.com/" title="Tri-Comp Solutions website" loading="lazy"></iframe>
-        </div>
-      </div>
-      <p class="ph-cap">Live preview of the Tri-Comp Solutions website — <a href="https://www.tri-comp.com/" target="_blank" rel="noopener" style="color:#5DD1E8;text-decoration:underline;text-underline-offset:2px">open in a new tab</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- 03 AI VIDEO & IMAGE GENERATION -->
+<!-- 02 AI VIDEO & IMAGE GENERATION -->
 <section id="ai" class="focus-sec" style="background:#F8F9FC">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
-      <p class="focus-eyebrow" style="color:#0A6B85">03 · AI Video &amp; Image Generation</p>
+      <p class="focus-eyebrow" style="color:#0A6B85">02 · AI Video &amp; Image Generation</p>
       <h2 class="focus-h flow flow-l mt-3 mb-4">Studio-Quality Content, Without the Studio</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">AI produces professional explainer videos and service visuals at a fraction of the usual cost and time — bringing servers, security and the cloud to life without an expensive shoot.</p>
@@ -389,9 +333,9 @@ tailwind.config={theme:{extend:{colors:{navy:{'DEFAULT':'#071226','light':'#0E1E
   <div class="absolute inset-0 dot-bg opacity-30"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
     <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#5DD1E8">The Vision</p>
-    <h2 class="focus-h flow flow-d mb-6">Social. Website. AI Content. One Brand, Everywhere.</h2>
+    <h2 class="focus-h flow flow-d mb-6">Social. AI Content. One Brand, Everywhere.</h2>
     <p class="text-white/70 max-w-2xl mx-auto mb-10" style="font-size:1.25rem;line-height:1.8">
-      Together, these three pillars put 24 years of Tri-Comp's engineering trust in front of the right buyers — consistently, professionally, and at scale.
+      Together, these two pillars put 24 years of Tri-Comp's engineering trust in front of the right buyers — consistently, professionally, and at scale.
     </p>
     <a href="mailto:hello@technext.asia?subject=Let%27s%20talk%20about%20Tri-Comp%27s%20digital%20marketing" class="btn btn-primary text-xs tracking-[.15em] uppercase px-9 py-4 font-semibold">
       Let's Build It — Talk to TechNext
