@@ -23,7 +23,6 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 /* Text effects: moving color (no glow) */
 @keyframes flowMove{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 .flow{background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:flowMove 6s linear infinite;padding-bottom:.04em}
-.flow-d{background-image:linear-gradient(90deg,#FF6B57,#FFC4B8,#FFF5F3,#FF6B57,#CF261A,#FF6B57)}
 .flow-l{background-image:linear-gradient(90deg,#1A1210,#A81E13,#CF261A,#A81E13,#1A1210)}
 @media(prefers-reduced-motion:reduce){.flow{animation:none}}
 
@@ -34,31 +33,31 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 .bchip .dot{width:6px;height:6px;border-radius:50%;background:#CF261A}
 
 /* Overview cards */
-.ov-card{position:relative;border-radius:18px;padding:34px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(207,38,26,.16);overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.4,.64,1),box-shadow .5s ease,border-color .4s ease,background .4s ease}
-.ov-card:hover{background:rgba(207,38,26,.06);border-color:rgba(207,38,26,.45);box-shadow:0 28px 64px rgba(0,0,0,.4)}
+.ov-card{position:relative;border-radius:18px;padding:34px 28px;background:#FFFFFF;border:1px solid rgba(207,38,26,.15);overflow:hidden;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .5s cubic-bezier(.34,1.4,.64,1),box-shadow .5s ease,border-color .4s ease,background .4s ease}
+.ov-card:hover{background:#FFFBFA;border-color:rgba(207,38,26,.4);box-shadow:0 24px 56px rgba(207,38,26,.14)}
 .ov-ic{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(207,38,26,.16),rgba(207,38,26,.04));border:1px solid rgba(207,38,26,.3);margin-bottom:20px;transition:transform .5s cubic-bezier(.34,1.6,.64,1)}
 .ov-card:hover .ov-ic{transform:translateY(-4px) scale(1.08) rotate(-4deg)}
-.ov-num{position:absolute;top:18px;right:22px;font-family:'Bebas Neue',cursive;font-size:2.4rem;color:rgba(207,38,26,.18);transition:color .4s ease}
-.ov-card:hover .ov-num{color:rgba(207,38,26,.4)}
+.ov-num{position:absolute;top:18px;right:22px;font-family:'Bebas Neue',cursive;font-size:2.4rem;color:rgba(207,38,26,.12);transition:color .4s ease}
+.ov-card:hover .ov-num{color:rgba(207,38,26,.28)}
 
 /* Tags & captions */
 .ph-cap{text-align:center;font-size:.88rem;margin-top:22px;color:#9A9590;letter-spacing:.03em}
 
 /* ── Social post cards ── */
-.post-card{position:relative;background:#221714;border:1px solid rgba(207,38,26,.16);border-radius:16px;overflow:hidden;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
-.post-card:hover{border-color:rgba(207,38,26,.5);box-shadow:0 26px 58px rgba(0,0,0,.5)}
+.post-card{position:relative;background:#FFFFFF;border:1px solid rgba(207,38,26,.15);border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.05);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.post-card:hover{border-color:rgba(207,38,26,.4);box-shadow:0 24px 52px rgba(0,0,0,.14)}
 .post-head{display:flex;align-items:center;gap:10px;padding:13px 15px}
 .post-ava{width:38px;height:38px;border-radius:50%;flex-shrink:0;overflow:hidden;border:1px solid rgba(207,38,26,.25);background:#fff;display:flex;align-items:center;justify-content:center}
 .post-ava img{width:78%;height:78%;object-fit:contain;display:block}
-.post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#FF6B57;border:1px solid rgba(207,38,26,.3);border-radius:5px;padding:3px 8px}
-.pname{font-size:12px;font-weight:700;color:#fff;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.phandle{font-size:10px;color:rgba(255,255,255,.42);line-height:1.2}
-.post-foot{display:flex;gap:20px;padding:11px 16px 13px;color:rgba(255,107,87,.55);border-top:1px solid rgba(207,38,26,.08)}
+.post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#A81E13;border:1px solid rgba(207,38,26,.3);background:rgba(207,38,26,.06);border-radius:5px;padding:3px 8px}
+.pname{font-size:12px;font-weight:700;color:#1C1917;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phandle{font-size:10px;color:rgba(28,25,23,.45);line-height:1.2}
+.post-foot{display:flex;gap:20px;padding:11px 16px 13px;color:rgba(168,30,19,.6);border-top:1px solid rgba(207,38,26,.08)}
 .post-foot svg{transition:transform .3s ease}
 .post-card:hover .post-foot svg:hover{transform:scale(1.25)}
 
 /* Real social-post media */
-.post-media{background:#221714;overflow:hidden;line-height:0}
+.post-media{background:#F5EFEE;overflow:hidden;line-height:0}
 .post-media img{width:100%;height:auto;display:block;transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
 .post-card:hover .post-media img{transform:scale(1.05)}
 
@@ -93,7 +92,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 <button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(11,8,7,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(207,38,26,.18)">
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(207,38,26,.14)">
   <div class="max-w-6xl mx-auto flex items-center justify-between relative">
     <a href="https://www.tri-comp.com/" target="_blank" rel="noopener" class="logo-chip">
       <img src="img/logo.png" alt="Tri-Comp Solutions Pte Ltd">
@@ -116,15 +115,15 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
       <span class="badge-dot"></span>
       Digital Marketing Showcase · 2026
     </div>
-    <p class="text-white/55 text-[11px] tracking-[.3em] uppercase mb-5">A Showcase for</p>
+    <p class="text-[11px] tracking-[.3em] uppercase mb-5" style="color:rgba(28,25,23,.55)">A Showcase for</p>
     <h1 class="font-extrabold leading-[1.06] mb-7" style="font-family:'Open Sans',sans-serif;letter-spacing:-.02em">
-      <span class="flow flow-d">Tri-Comp Solutions</span><br>
+      <span class="flow flow-l">Tri-Comp Solutions</span><br>
       <em class="font-normal orange-anim not-italic">Pte Ltd</em>
     </h1>
-    <p class="text-white/75 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7">
-      Two ways we'll grow the brand online — <strong style="color:#FF6B57;font-weight:600">social media</strong> and <strong style="color:#FF6B57;font-weight:600">AI-generated content</strong>.
+    <p class="mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7;color:rgba(28,25,23,.78)">
+      Two ways we'll grow the brand online — <strong style="color:#A81E13;font-weight:600">social media</strong> and <strong style="color:#A81E13;font-weight:600">AI-generated content</strong>.
     </p>
-    <p class="text-white/55 text-[11px] tracking-[.22em] uppercase mb-11">
+    <p class="text-[11px] tracking-[.22em] uppercase mb-11" style="color:rgba(28,25,23,.5)">
       Digital Marketing Showcase &nbsp;·&nbsp; Curated by TechNext
     </p>
     <div class="flex flex-row flex-wrap gap-4 justify-center">
@@ -154,7 +153,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
       </div>
     </div>
   </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2" style="color:rgba(28,25,23,.3)">
     <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
   </div>
 </section>
@@ -167,13 +166,13 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 </div>
 
 <!-- OVERVIEW -->
-<section id="overview" class="py-24 px-6" style="background:#14100E">
+<section id="overview" class="py-24 px-6" style="background:#FFF9F8">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#FF6B57">What We'll Focus On</p>
-      <h2 class="focus-h flow flow-d mb-5">Two Ways to Grow Tri-Comp Online</h2>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#A81E13">What We'll Focus On</p>
+      <h2 class="focus-h flow flow-l mb-5">Two Ways to Grow Tri-Comp Online</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around two high-impact pillars — turning 24 years of engineering trust into online visibility and leads.</p>
+      <p class="max-w-2xl mx-auto" style="font-size:1.2rem;color:rgba(28,25,23,.68)">A visual-first digital strategy built around two high-impact pillars — turning 24 years of engineering trust into online visibility and leads.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
@@ -182,9 +181,9 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#CF261A" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FF6B57"/></svg>
         </div>
-        <h3 class="text-2xl font-extrabold mb-2 text-white">Social Media Posting</h3>
-        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional posts that keep Tri-Comp visible and build trust with IT managers and business owners.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#FF6B57">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <h3 class="text-2xl font-extrabold mb-2" style="color:#1C1917">Social Media Posting</h3>
+        <p class="text-base" style="color:rgba(28,25,23,.62)">Professional posts that keep Tri-Comp visible and build trust with IT managers and business owners.</p>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#A81E13">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
       <a href="#ai" class="ov-card reveal-s d2 block" style="text-decoration:none">
@@ -192,9 +191,9 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#CF261A" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#FF6B57"/><circle cx="5.5" cy="18" r=".9" fill="#FF6B57"/></svg>
         </div>
-        <h3 class="text-2xl font-extrabold mb-2 text-white">AI Video &amp; Image Generation</h3>
-        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional service visuals and explainer videos — created fast and affordably with AI.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#FF6B57">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <h3 class="text-2xl font-extrabold mb-2" style="color:#1C1917">AI Video &amp; Image Generation</h3>
+        <p class="text-base" style="color:rgba(28,25,23,.62)">Professional service visuals and explainer videos — created fast and affordably with AI.</p>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#A81E13">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
     </div>
@@ -202,7 +201,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 </section>
 
 <!-- 01 SOCIAL MEDIA POSTING -->
-<section id="social" class="focus-sec" style="background:#F8F9FC">
+<section id="social" class="focus-sec" style="background:#FFFBFA">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
       <p class="focus-eyebrow" style="color:#A81E13">01 · Social Media Posting</p>
@@ -263,7 +262,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 </section>
 
 <!-- 02 AI VIDEO & IMAGE GENERATION -->
-<section id="ai" class="focus-sec" style="background:#F8F9FC">
+<section id="ai" class="focus-sec" style="background:#FFFBFA">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
       <p class="focus-eyebrow" style="color:#A81E13">02 · AI Video &amp; Image Generation</p>
@@ -318,12 +317,12 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 </section>
 
 <!-- CLOSING -->
-<section class="py-24 px-6 relative" style="background:linear-gradient(160deg,#221714,#14100E)">
+<section class="py-24 px-6 relative" style="background:linear-gradient(160deg,#FFF3F1,#FFF9F8)">
   <div class="absolute inset-0 dot-bg opacity-30"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#FF6B57">The Vision</p>
-    <h2 class="focus-h flow flow-d mb-6">Social. AI Content. One Brand, Everywhere.</h2>
-    <p class="text-white/70 max-w-2xl mx-auto mb-10" style="font-size:1.25rem;line-height:1.8">
+    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#A81E13">The Vision</p>
+    <h2 class="focus-h flow flow-l mb-6">Social. AI Content. One Brand, Everywhere.</h2>
+    <p class="max-w-2xl mx-auto mb-10" style="font-size:1.25rem;line-height:1.8;color:rgba(28,25,23,.72)">
       Together, these two pillars put 24 years of Tri-Comp's engineering trust in front of the right buyers — consistently, professionally, and at scale.
     </p>
     <a href="mailto:hello@technext.asia?subject=Let%27s%20talk%20about%20Tri-Comp%27s%20digital%20marketing" class="btn btn-primary text-xs tracking-[.15em] uppercase px-9 py-4 font-semibold">
