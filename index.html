@@ -61,20 +61,12 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 .post-media img{width:100%;height:auto;display:block;transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
 .post-card:hover .post-media img{transform:scale(1.05)}
 
-/* AI placeholder-tile gradients (still used by the AI video-concept section) */
-.ph-g1{background:linear-gradient(135deg,#5C1911,#CF261A)}
-.ph-g2{background:linear-gradient(135deg,#1A1210,#A81E13)}
-.ph-g3{background:linear-gradient(135deg,#B81419,#CF261A)}
-
-/* ── AI video-concept placeholders ── */
-.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(207,38,26,.2);display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
-.video-ph:hover{box-shadow:0 36px 80px rgba(0,0,0,.6)}
-.play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;transition:transform .4s ease,background .4s ease;animation:pulse-ring 2.6s ease-out infinite;position:relative;z-index:2}
-.video-ph:hover .play-btn{transform:scale(1.16);background:rgba(255,255,255,.3)}
-.play-btn::before{content:'';border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;margin-left:5px}
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}70%{box-shadow:0 0 0 26px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+/* ── AI video tiles (real autoplay clips) ── */
+.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(207,38,26,.2);background:#1A1210;display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
+.video-ph:hover{box-shadow:0 36px 80px rgba(0,0,0,.35)}
+.video-ph video{width:100%;height:100%;object-fit:cover;display:block}
 .ai-badge{position:absolute;top:11px;left:11px;z-index:4;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:linear-gradient(135deg,#A81E13,#CF261A);padding:3px 8px;border-radius:5px}
-.video-ph .gal-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:30px 14px 12px;background:linear-gradient(to top,rgba(3,7,16,.88),transparent);color:#fff;font-size:.8rem;letter-spacing:.02em;font-weight:600;text-align:left}
+.video-ph .gal-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:30px 14px 12px;background:linear-gradient(to top,rgba(3,7,16,.82),transparent);color:#fff;font-size:.8rem;letter-spacing:.02em;font-weight:600;text-align:left}
 .video-ph .gal-cap small{display:block;font-weight:400;opacity:.65;font-size:.68rem;margin-top:2px}
 
 /* Continuous float + shine sweep */
@@ -83,7 +75,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 .shine{position:relative;overflow:hidden}
 .shine::before{content:'';position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.16) 50%,transparent 80%);transform:skewX(-18deg);transition:left .8s ease;pointer-events:none;z-index:6}
 .shine:hover::before{left:170%}
-@media(prefers-reduced-motion:reduce){.float,.play-btn{animation:none}}
+@media(prefers-reduced-motion:reduce){.float{animation:none}}
 </style>
 </head>
 <body>
@@ -108,6 +100,9 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
 
 <!-- HERO -->
 <section class="hero-bg relative min-h-screen flex items-center justify-center">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="vid/hero.jpg">
+    <source src="vid/hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="grid-field"></div>
   <div id="hero-inner" class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 pb-20">
@@ -268,7 +263,7 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
       <p class="focus-eyebrow" style="color:#A81E13">02 · AI Video &amp; Image Generation</p>
       <h2 class="focus-h flow flow-l mt-3 mb-4">Studio-Quality Content, Without the Studio</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4744;font-size:1.2rem;line-height:1.8">AI produces professional explainer videos and service visuals at a fraction of the usual cost and time — bringing servers, security and the cloud to life without an expensive shoot.</p>
+      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4744;font-size:1.2rem;line-height:1.8">AI produces professional video content at a fraction of the usual cost and time — putting Tri-Comp's people, support and partnerships on screen without an expensive shoot.</p>
       <div class="chip-row mb-2">
         <span class="bchip" style="color:#A81E13"><span class="dot"></span>Fast Turnaround</span>
         <span class="bchip" style="color:#A81E13"><span class="dot"></span>Affordable</span>
@@ -276,42 +271,42 @@ tailwind.config={theme:{extend:{colors:{ink:{'DEFAULT':'#14100E','light':'#22171
       </div>
     </div>
 
-    <!-- AI-generated video concepts · 2-column grid -->
+    <!-- 6 real AI-generated videos · 2-column grid -->
     <div class="relative reveal mt-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div class="video-ph tilt shine ph-g2"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
-          <div class="gal-cap">Server Room Walkthrough<small>A cinematic pass through a modern, secure data hall</small></div>
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-1.jpg"><source src="vid/ai-1.mp4" type="video/mp4"></video>
+          <div class="gal-cap">Smarter Decisions, Faster<small>AI-powered insight, right on the desktop</small></div>
         </div>
 
-        <div class="video-ph tilt shine ph-g3"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
-          <div class="gal-cap">Cybersecurity, Visualised<small>How Tri-Comp stops a breach before it starts</small></div>
-        </div>
-
-        <div class="video-ph tilt shine ph-g1"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
-          <div class="gal-cap">Cloud Migration, Explained<small>From on-premise to cloud in 30 seconds</small></div>
-        </div>
-
-        <div class="video-ph tilt shine ph-g2"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
-          <div class="gal-cap">Unified Comms in Action<small>One VOIP system, every device, every desk</small></div>
-        </div>
-
-        <div class="video-ph tilt shine ph-g1"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
-          <div class="gal-cap">Meet the Engineers<small>The certified team behind every ticket</small></div>
-        </div>
-
-        <div class="video-ph tilt shine ph-g3"><span class="ai-badge">AI Video</span>
-          <div class="play-btn"></div>
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-2.jpg"><source src="vid/ai-2.mp4" type="video/mp4"></video>
           <div class="gal-cap">24/7 Helpdesk, In Action<small>Support that never clocks out</small></div>
         </div>
 
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-3.jpg"><source src="vid/ai-3.mp4" type="video/mp4"></video>
+          <div class="gal-cap">Unified Comms in Action<small>One phone system, every desk, every call</small></div>
+        </div>
+
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-4.jpg"><source src="vid/ai-4.mp4" type="video/mp4"></video>
+          <div class="gal-cap">The People Behind the Tickets<small>Certified engineers, ready to help</small></div>
+        </div>
+
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-5.jpg"><source src="vid/ai-5.mp4" type="video/mp4"></video>
+          <div class="gal-cap">Planning Your Next Move<small>Tech refresh and roadmap planning, together</small></div>
+        </div>
+
+        <div class="video-ph tilt shine"><span class="ai-badge">AI Video</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="vid/ai-6.jpg"><source src="vid/ai-6.mp4" type="video/mp4"></video>
+          <div class="gal-cap">A Partnership You Can Count On<small>Onboarding new clients, the Tri-Comp way</small></div>
+        </div>
+
       </div>
-      <p class="ph-cap">Concept previews — final AI videos will be generated from Tri-Comp's real branding and service footage</p>
+      <p class="ph-cap">AI-generated video content — ready to publish across Tri-Comp's social channels</p>
     </div>
   </div>
 </section>

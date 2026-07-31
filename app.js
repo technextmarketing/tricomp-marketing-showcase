@@ -20,6 +20,17 @@ var fine   = window.matchMedia && window.matchMedia('(hover:hover) and (pointer:
 // ── Marquee: duplicate track for seamless loop ──
 (function(){var mq=document.getElementById('mq');if(mq)mq.innerHTML+=mq.innerHTML;})();
 
+// ── AI video tiles: pause when scrolled out of view ──
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('.video-ph video'));
+  if(!vids.length)return;
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.play().catch(function(){});}
+    else{e.target.pause();}
+  });},{threshold:.2});
+  vids.forEach(function(v){vio.observe(v);});
+})();
+
 // ── Reveal on scroll (all variants) ──
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(function(el){io.observe(el);});
